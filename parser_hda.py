@@ -74,9 +74,22 @@ class Parser:
         self.expect("NUM")
         self.expect("ETAGE")
         
-        self.parse_floor()
+        floor = self.parse_floor()
+        
+        return ast.House(floor)
                     
     def parse_floor(self):
-        self.expect("LARGEUR")
-        self.expect("HAUTEUR")
+        lenght = self.expect("DIM")
+        width = self.expect("DIM")
+        
+        self.expect("CUISINE")
+        room = self.parse_kitchen()
+        
+        return ast.Floor(lenght, width, room)
+    
+    def parse_kitchen(self):
+        lenght = self.expect("DIM")
+        width = self.expect("DIM")
+        
+        return ast.Kitchen(lenght, width)
       

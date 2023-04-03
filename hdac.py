@@ -2,6 +2,7 @@ from optparse import OptionParser
 from lexer import Lexer
 from parser_hda import Parser
 from visitor_hda import Visitor
+from house_designer import HouseDesigner
 
 class Compilateur:
     def __init__(self):
@@ -38,8 +39,11 @@ class Compilateur:
         parser = Parser(lexems)
         ast = parser.parse() 
         
-        visitor = Visitor.Visitor()
+        visitor = Visitor()
         visitor.visit(ast)
+        
+        hd = HouseDesigner()
+        hd.design(ast)
         
 
 c = Compilateur()

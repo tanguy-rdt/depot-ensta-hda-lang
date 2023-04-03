@@ -1,7 +1,6 @@
 class House:
-    def __init__(self, declarations, statements):
-        self.declarations = declarations
-        self.statements = statements
+    def __init__(self, floor):
+        self.floor = floor
 
     def accept(self, visitor):
         visitor.visit_house(self)
@@ -21,3 +20,11 @@ class Room:
 
     def accept(self, visitor):
         visitor.visit_room(self)
+
+class Kitchen:
+    def __init__(self, lenght, width):
+        self.lenght = lenght
+        self.width = width
+
+    def accept(self, visitor):
+        visitor.visit_kitchen(self)

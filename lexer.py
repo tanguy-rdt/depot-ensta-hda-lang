@@ -18,13 +18,12 @@ regexExpressions = [
     (r'est', "POSITION_COORD"),
     (r'ouest', "POSITION_COORD"),
     
-    (r'de \d+m+', "LARGEUR"),
-    (r'sur \d+m+', "HAUTEUR"),
-    (r"\d+m+", "DIM"),
+    (r"\d+m", "DIM"),
     (r"\d+", "NUM"),
 
     
     (r'étage', "ETAGE"),
+    (r'cuisine', "CUISINE"),
     
     # Useless words
     (r"[a-z-A-Z]\w*", None),

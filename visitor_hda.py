@@ -3,11 +3,15 @@ class Visitor:
         ast.accept(self)
             
     def visit_house(self, house):
-        house.etage.accept(self)
+        house.floor.accept(self)
             
-    def visit_etage(self, etage):
-        etage.room.accept(self)
+    def visit_floor(self, etage):
+        #etage.room.accept(self)
+        pass
         
     def visit_room(self, room):
+        pass
+    
+    def visit_kitchen(self, kitchen):
         pass
         
