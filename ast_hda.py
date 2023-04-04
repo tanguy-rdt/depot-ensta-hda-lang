@@ -15,8 +15,8 @@ class Floor:
         visitor.visit_floor(self)
 
 class Room:
-    def __init__(self, things):
-        self.things = things
+    def __init__(self, room):
+        self.room = room
 
     def accept(self, visitor):
         visitor.visit_room(self)

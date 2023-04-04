@@ -3,7 +3,9 @@ import sys
 
 regexExpressions = [
     # Whitespace
-    (r'[ \n\t]+', None),
+    (r'[ \t]+', None),
+    
+    (r"\n+", "END"),
     
     # Ponctuation
     (r'[ \'\.\,]+', None),
@@ -18,12 +20,19 @@ regexExpressions = [
     (r'est', "POSITION_COORD"),
     (r'ouest', "POSITION_COORD"),
     
-    (r"\d+m", "DIM"),
     (r"\d+", "NUM"),
 
     
-    (r'étage', "ETAGE"),
-    (r'cuisine', "CUISINE"),
+    (r'étage', "FLOOR"),
+    (r'piéce', "ROOM"),
+    
+    (r'cuisine', "KITCHEN"),
+    (r'salon', "LOUNGE"),
+    (r'chambre', "BEDROOM"),
+    (r'wc', "WC"),
+    (r'garage', "GARAGE"),
+    (r'salle de bain', "BATHROOM"),
+
     
     # Useless words
     (r"[a-z-A-Z]\w*", None),
