@@ -4,28 +4,29 @@ import sys
 regexExpressions = [
     # Whitespace
     (r'[ \t]+', None),
-    
+
     (r"\n+", "END"),
-    
+
     # Ponctuation
     (r'[ \'\.\,]+', None),
-    
+
+     # Français
     (r'droite', "POSITION"),
     (r'gauche', "POSITION"),
     (r'devant', "POSITION"),
     (r'derriere', "POSITION"),
-    
+
     (r'nord', "POSITION_COORD"),
     (r'sud', "POSITION_COORD"),
     (r'est', "POSITION_COORD"),
     (r'ouest', "POSITION_COORD"),
-    
+
     (r"\d+", "NUM"),
 
-    
-    (r'étage', "FLOOR"),
-    (r'piéce', "ROOM"),
-    
+    (r'étages', "FLOOR"),
+    (r'pièces', "ROOM"),
+    (r'pièce', "ROOM"),
+
     (r'cuisine', "KITCHEN"),
     (r'salon', "LOUNGE"),
     (r'chambre', "BEDROOM"),
@@ -33,11 +34,34 @@ regexExpressions = [
     (r'garage', "GARAGE"),
     (r'salle de bain', "BATHROOM"),
 
-    
+    # Anglais
+    (r'right', "POSITION"),
+    (r'left', "POSITION"),
+    (r'in front of', "POSITION"),
+    (r'behind', "POSITION"),
+
+    (r'north', "POSITION_COORD"),
+    (r'south', "POSITION_COORD"),
+    (r'east', "POSITION_COORD"),
+    (r'west', "POSITION_COORD"),
+
+    (r"\d+", "NUM"),
+
+    (r'floor', "FLOOR"),
+    (r'room', "ROOM"),
+    (r'rooms', "ROOM"),
+
+    (r'kitchen', "KITCHEN"),
+    (r'lounge', "LOUNGE"),
+    (r'bedroom', "BEDROOM"),
+    (r'wc', "WC"),
+    (r'toilet', "WC"),
+    (r'garage', "GARAGE"),
+    (r'bathroom', "BATHROOM"),
+
     # Useless words
     (r"[a-z-A-Z]\w*", None),
 ]
-
 
 
 class Lexem:
@@ -53,9 +77,10 @@ class Lexem:
     position: integer tuple
         Tuple to point out the lexem in the input file (line number, position)
     '''
+
     def __init__(self, tag=None, value=None, position=None):
-        self.tag      = tag
-        self.value    = value
+        self.tag = tag
+        self.value = value
         self.position = position
 
     def __repr__(self):
@@ -66,6 +91,7 @@ class Lexer:
     '''
     Component in charge of the transformation of raw data to lexems.
     '''
+
     def __init__(self, lexems=None):
         self.lexems = lexems if lexems is not None else []
 
