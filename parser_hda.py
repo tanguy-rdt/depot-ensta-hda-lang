@@ -89,26 +89,18 @@ class Parser:
         
         room = []
         if self.show_next().tag == "ROOM":
+            self.accept()
             while self.show_next().tag != "END":
-                room.append(self.parse_room())
+                if self.show_next().tag == "KITCHEN":
+                    room.append(self.parse_kitchen())
             self.accept()
         
         return ast.Floor(lenght, width, room)
     
-    def parse_room(self):
-        self.accept()
-        
-        room = None
-        if self.show_next().tag == "KITCHEN":
-            room = self.parse_kitchen()
-            
-        return ast.Room(room)
-        
-    
     def parse_kitchen(self):
-        self.accept()
+        name = self.accept()
         lenght = self.expect("NUM")
         width = self.expect("NUM")
         
-        return ast.Kitchen(lenght, width)
+        return ast.Kitchen(lenght, width, name)
       

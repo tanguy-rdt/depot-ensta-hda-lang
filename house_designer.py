@@ -32,9 +32,6 @@ class HouseDesigner:
         DesignerTools.draw_rectangle(self.ax, int(floor.lenght.value), int(floor.width.value))
         for room in floor.room:
             room.accept(self)      
-        
-    def visit_room(self, room):
-        room.room.accept(self)
     
     def visit_kitchen(self, kitchen):
-        DesignerTools.draw_rectangle(self.ax, int(kitchen.lenght.value), int(kitchen.width.value), label="kitchen")
+        DesignerTools.draw_rectangle(self.ax, int(kitchen.lenght.value), int(kitchen.width.value), label=kitchen.name.value)

@@ -22,9 +22,10 @@ class Room:
         visitor.visit_room(self)
 
 class Kitchen:
-    def __init__(self, lenght, width):
+    def __init__(self, lenght, width, name):
         self.lenght = lenght
         self.width = width
+        self.name = name
 
     def accept(self, visitor):
         visitor.visit_kitchen(self)
