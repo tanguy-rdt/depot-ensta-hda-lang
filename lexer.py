@@ -9,59 +9,32 @@ regexExpressions = [
 
     # Ponctuation
     (r'[ \'\.\,\:]+', None),
+    
+    (r"\d+", "NUM"),
 
      # Français
-    (r'droite', "POSITION"),
-    (r'gauche', "POSITION"),
-    (r'devant', "POSITION"),
-    (r'derriere', "POSITION"),
+    (r'droite|right', "POSITION"),
+    (r'gauche|left', "POSITION"),
+    (r'devant|in front of', "POSITION"),
+    (r'derriere|behind', "POSITION"),
 
-    (r'nord', "POSITION_COORD"),
-    (r'sud', "POSITION_COORD"),
-    (r'est', "POSITION_COORD"),
-    (r'ouest', "POSITION_COORD"),
+    (r'nord|north', "POSITION_COORD"),
+    (r'sud|south', "POSITION_COORD"),
+    (r'est|east', "POSITION_COORD"),
+    (r'ouest|west', "POSITION_COORD"),
 
-    (r"\d+", "NUM"),
 
-    (r'étage', "FLOOR"),
-    (r'étages', "FLOOR"),
-    (r'pièces', "ROOM"),
-    (r'pièce', "ROOM"),
+    (r'étage|étages|floor|floors', "FLOOR"),
+    (r'pièce|pièce|room|rooms', "ROOM"),
 
-    (r'cuisine', "KITCHEN"),
-    (r'salon', "LOUNGE"),
-    (r'chambre', "BEDROOM"),
-    (r'wc', "WC"),
-    (r'garage', "GARAGE"),
-    (r'salle de bain', "BATHROOM"),
-
-    # Anglais
-    (r'right', "POSITION"),
-    (r'left', "POSITION"),
-    (r'in front of', "POSITION"),
-    (r'behind', "POSITION"),
-
-    (r'north', "POSITION_COORD"),
-    (r'south', "POSITION_COORD"),
-    (r'east', "POSITION_COORD"),
-    (r'west', "POSITION_COORD"),
-
-    (r"\d+", "NUM"),
-
-    (r'floor', "FLOOR"),
-    (r'room', "ROOM"),
-    (r'rooms', "ROOM"),
-
-    (r'kitchen', "KITCHEN"),
-    (r'lounge', "LOUNGE"),
-    (r'bedroom', "BEDROOM"),
-    (r'wc', "WC"),
-    (r'toilet', "WC"),
-    (r'garage', "GARAGE"),
-    (r'bathroom', "BATHROOM"),
+    (r'cuisine|kitchen', "KITCHEN"),
+    (r'salon|lounge', "LOUNGE"),
+    (r'chambre|bedroom', "BEDROOM"),
+    (r'salle de bain|bathroom', "BATHROOM"),
 
     # Useless words
     (r"[a-z-A-Z]\w*", None),
+    
 ]
 
 
