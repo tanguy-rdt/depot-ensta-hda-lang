@@ -93,6 +93,8 @@ class Parser:
             while self.show_next().tag != "END":
                 if self.show_next().tag == "KITCHEN":
                     room.append(self.parse_kitchen())
+                if self.show_next().tag == "BEDROOM":
+                    room.append(self.parse_bedroom())
             self.accept()
         
         return ast.Floor(lenght, width, room)
@@ -103,4 +105,25 @@ class Parser:
         width = self.expect("NUM")
         
         return ast.Kitchen(lenght, width, name)
+    
+    def parse_lounge(self):
+        name = self.accept()
+        lenght = self.expect("NUM")
+        width = self.expect("NUM")
+        
+        return ast.Lounge(lenght, width, name)
+    
+    def parse_bedroom(self):
+        name = self.accept()
+        lenght = self.expect("NUM")
+        width = self.expect("NUM")
+        
+        return ast.Bedroom(lenght, width, name)
+    
+    def parse_bathroom(self):
+        name = self.accept()
+        lenght = self.expect("NUM")
+        width = self.expect("NUM")
+        
+        return ast.Bathroom(lenght, width, name)
       
