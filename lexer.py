@@ -8,7 +8,7 @@ regexExpressions = [
     (r"\n+", "END"),
 
     # Ponctuation
-    (r'[ \'\.\,]+', None),
+    (r'[ \'\.\,\:]+', None),
 
      # Français
     (r'droite', "POSITION"),
@@ -23,6 +23,7 @@ regexExpressions = [
 
     (r"\d+", "NUM"),
 
+    (r'étage', "FLOOR"),
     (r'étages', "FLOOR"),
     (r'pièces', "ROOM"),
     (r'pièce', "ROOM"),
