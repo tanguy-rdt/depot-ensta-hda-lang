@@ -72,19 +72,27 @@ class Parser:
         Parses a program which is a succession of assignments.
         """
         self.expect("NUM")
-        self.expect("FLOOR")
         
-        floor = self.parse_floor()
-        
+        floor = []
+        if self.show_next().tag == "FLOOR":    
+            while self.show_next().tag != "END":
+                print("tat")
+                floor.append(self.parse_floor())
+            self.accept()
+                    
         return ast.House(floor)
                     
     def parse_floor(self):
+        self.accept()
+        
         lenght = self.expect("NUM")
         width = self.expect("NUM")
         
         room = []
-        while self.show_next().tag != "END":
-            room.append(self.parse_room())
+        if self.show_next().tag == "ROOM":
+            while self.show_next().tag != "END":
+                room.append(self.parse_room())
+            self.accept()
         
         return ast.Floor(lenght, width, room)
     

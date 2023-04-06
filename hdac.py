@@ -34,6 +34,7 @@ class Compilateur:
     def build(self):
         lexer = Lexer()
         lexems = lexer.lex(self.content)
+        print(lexems)
         
         parser = Parser(lexems)
         ast = parser.parse() 

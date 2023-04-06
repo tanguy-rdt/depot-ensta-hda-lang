@@ -23,7 +23,8 @@ class HouseDesigner:
         plt.show()
             
     def visit_house(self, house):
-        house.floor.accept(self)
+        for floor in house.floor:
+            floor.accept(self)
             
     def visit_floor(self, floor):
         self.fig, self.ax = plt.subplots()
