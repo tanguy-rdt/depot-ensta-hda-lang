@@ -29,6 +29,7 @@ class HouseDesigner:
         pdf = PdfPages("house_design.pdf")
         for fig in self.fig:
             pdf.savefig(fig)
+            fig.savefig(".img/fig" + str(self.fig.index(fig)) + ".png") # a supp juste pour le readme
         pdf.close()
             
             
