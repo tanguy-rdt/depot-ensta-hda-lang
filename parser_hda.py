@@ -76,7 +76,6 @@ class Parser:
         floor = []
         if self.show_next().tag == "FLOOR":    
             while self.show_next().tag != "END":
-                print("tat")
                 floor.append(self.parse_floor())
             self.accept()
                     
