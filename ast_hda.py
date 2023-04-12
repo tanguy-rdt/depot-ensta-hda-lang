@@ -5,6 +5,7 @@ class House:
     def accept(self, visitor):
         visitor.visit_house(self)
 
+
 class Floor:
     def __init__(self, lenght, width, room):
         self.lenght = lenght
@@ -14,6 +15,7 @@ class Floor:
     def accept(self, visitor):
         visitor.visit_floor(self)
 
+
 class Kitchen:
     def __init__(self, lenght, width, name):
         self.lenght = lenght
@@ -22,7 +24,8 @@ class Kitchen:
 
     def accept(self, visitor):
         visitor.visit_kitchen(self)
-        
+
+
 class Lounge:
     def __init__(self, lenght, width, name):
         self.lenght = lenght
@@ -30,7 +33,8 @@ class Lounge:
         self.name = name
 
     def accept(self, visitor):
-        visitor.visit_kitchen(self)
+        visitor.visit_lounge(self)
+
 
 class Bedroom:
     def __init__(self, lenght, width, name):
@@ -39,8 +43,9 @@ class Bedroom:
         self.name = name
 
     def accept(self, visitor):
-        visitor.visit_kitchen(self)
-        
+        visitor.visit_bedroom(self)
+
+
 class Bathroom:
     def __init__(self, lenght, width, name):
         self.lenght = lenght
@@ -48,5 +53,4 @@ class Bathroom:
         self.name = name
 
     def accept(self, visitor):
-        visitor.visit_kitchen(self)
-        
+        visitor.visit_bathroom(self)

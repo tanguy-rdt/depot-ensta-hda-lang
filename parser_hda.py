@@ -72,21 +72,21 @@ class Parser:
         Parses a program which is a succession of assignments.
         """
         self.expect("NUM")
-        
+
         floor = []
-        if self.show_next().tag == "FLOOR":    
+        if self.show_next().tag == "FLOOR":
             while self.show_next().tag != "END":
                 floor.append(self.parse_floor())
             self.accept()
-                    
+
         return ast.House(floor)
-                    
+
     def parse_floor(self):
         self.accept()
-        
+
         lenght = self.expect("NUM")
         width = self.expect("NUM")
-        
+
         room = []
         if self.show_next().tag == "ROOM":
             self.accept()
@@ -95,35 +95,38 @@ class Parser:
                     room.append(self.parse_kitchen())
                 if self.show_next().tag == "BEDROOM":
                     room.append(self.parse_bedroom())
+                if self.show_next().tag == "LOUNGE":
+                    room.append(self.parse_lounge())
+                if self.show_next().tag == "BATHROOM":
+                    room.append(self.parse_bathroom())
             self.accept()
-        
+
         return ast.Floor(lenght, width, room)
-    
+
     def parse_kitchen(self):
         name = self.accept()
         lenght = self.expect("NUM")
         width = self.expect("NUM")
-        
+
         return ast.Kitchen(lenght, width, name)
-    
+
     def parse_lounge(self):
         name = self.accept()
         lenght = self.expect("NUM")
         width = self.expect("NUM")
-        
+
         return ast.Lounge(lenght, width, name)
-    
+
     def parse_bedroom(self):
         name = self.accept()
         lenght = self.expect("NUM")
         width = self.expect("NUM")
-        
+
         return ast.Bedroom(lenght, width, name)
-    
+
     def parse_bathroom(self):
         name = self.accept()
         lenght = self.expect("NUM")
         width = self.expect("NUM")
-        
+
         return ast.Bathroom(lenght, width, name)
-      
