@@ -4,6 +4,7 @@ from optparse import OptionParser
 from lexer import Lexer
 from parser_hda import Parser
 from house_designer import HouseDesigner
+from house_designer import HouseDesigner3D
 
 
 class Builder:
@@ -16,12 +17,17 @@ class Builder:
         
         lexer = Lexer()
         lexems = lexer.lex(content)
+
+        print(lexems)
         
         parser = Parser(lexems)
         ast = parser.parse() 
         
         hd = HouseDesigner()
         hd.design(ast)
+
+        hd3d = HouseDesigner3D()
+        hd3d.design(ast)
         
 class Interactive:
     def run(self):        

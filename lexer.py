@@ -3,34 +3,29 @@ import sys
 
 regexExpressions = [
     # Whitespace
-    (r'[ \t]+', None),
+    (r'[ \t\n]+', None),
 
-    (r"\n+", "END"),
+    (r"!", "END"),
 
     # Ponctuation
     (r'[ \'\.\,\:]+', None),
     
-    (r"\d+", "NUM"),
+    (r"\d+m", "DIM"),
 
      # Français
-    (r'droite|right', "POSITION"),
-    (r'gauche|left', "POSITION"),
-    (r'devant|in front of', "POSITION"),
-    (r'derriere|behind', "POSITION"),
-
-    (r'nord|north', "POSITION_COORD"),
-    (r'sud|south', "POSITION_COORD"),
-    (r'est|east', "POSITION_COORD"),
-    (r'ouest|west', "POSITION_COORD"),
+    (r'droite|right', "RIGHT"),
+    (r'gauche|left', "LEFT"),
+    (r'au-dessus|top', "TOP"),
+    (r'au-dessous|bottom', "BOTTOM"),
 
 
-    (r'étage|étages|floor|floors', "FLOOR"),
-    (r'pièce|pièce|room|rooms', "ROOM"),
+    (r'étage|etage|etages|étages|floor|floors', "FLOOR"),
 
-    (r'cuisine|kitchen', "KITCHEN"),
-    (r'salon|lounge', "LOUNGE"),
-    (r'chambre|bedroom', "BEDROOM"),
-    (r'salle de bain|bathroom', "BATHROOM"),
+    (r'cuisine|kitchen', "ROOM"),
+    (r'garage', "ROOM"),
+    (r'salon|lounge', "ROOM"),
+    (r'chambre|bedroom', "ROOM"),
+    (r'salle de bain|bathroom', "ROOM"),
 
     # Useless words
     (r"[a-z-A-Z]\w*", None),

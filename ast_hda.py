@@ -15,42 +15,12 @@ class Floor:
     def accept(self, visitor):
         visitor.visit_floor(self)
 
-
-class Kitchen:
-    def __init__(self, lenght, width, name):
+class Room:
+    def __init__(self, lenght, width, name, position):
         self.lenght = lenght
         self.width = width
         self.name = name
+        self.position = position
 
     def accept(self, visitor):
-        visitor.visit_kitchen(self)
-
-
-class Lounge:
-    def __init__(self, lenght, width, name):
-        self.lenght = lenght
-        self.width = width
-        self.name = name
-
-    def accept(self, visitor):
-        visitor.visit_lounge(self)
-
-
-class Bedroom:
-    def __init__(self, lenght, width, name):
-        self.lenght = lenght
-        self.width = width
-        self.name = name
-
-    def accept(self, visitor):
-        visitor.visit_bedroom(self)
-
-
-class Bathroom:
-    def __init__(self, lenght, width, name):
-        self.lenght = lenght
-        self.width = width
-        self.name = name
-
-    def accept(self, visitor):
-        visitor.visit_bathroom(self)
+        visitor.visit_room(self) 
