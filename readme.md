@@ -10,8 +10,8 @@ _Exemple:_
 
 ```txt
 J'aimerai un plan de maison avec un étage de 50m sur 100m, il y a une pièce: la cuisine de 30m sur 30m. 
-Il y a le salon de 15m sur 15m a droite de la cuisine, le garage de 20m sur 20m est au-dessus de la cuisine. Il y a un second étage de 50m sur 50m, avec une pièce, 
-la chambre de 25m sur 50m, la salle de bain fait 15m sur 20m et elle est a droite de la chambre ;
+Il y a le salon de 15m sur 15m à droite de la cuisine, le garage de 20m sur 20m est au-dessus de la cuisine. Il y a un second étage de 50m sur 50m, avec une pièce, 
+la chambre de 25m sur 50m, la salle de bain fait 15m sur 20m et elle est à droite de la chambre ;
 ```
 
 Pour que cela fonctionne, il est important de respecter une certaine grammaire:
@@ -47,7 +47,7 @@ Ce qui va nous permettre d'entrer le plan de notre maison en plusieurs étapes e
 ```txt 
 >>> J'aimerai un plan de maison avec un étage de 50m sur 100m
 >>> il y a une pièce: la cuisine de 30m sur 30m
->>> Il y a le salon de 15m sur 15m a droite de la cuisine
+>>> Il y a le salon de 15m sur 15m à droite de la cuisine
 >>> le garage de 20m sur 20m est au-dessus de la cuisine
 >>> Il y a un second étage de 50m sur 50m
 >>> exit
