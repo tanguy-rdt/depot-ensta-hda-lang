@@ -14,11 +14,11 @@ Il y a le salon de 15m sur 15m a droite de la cuisine, le garage de 20m sur 20m 
 la chambre de 25m sur 50m, la salle de bain fait 15m sur 20m et elle est a droite de la chambre ;
 ```
 
-Pour que cela fonctionne il est important de respeter une certaine gramaire:
+Pour que cela fonctionne, il est important de respecter une certaine grammaire:
 
-1. Commencer par un étage poursuivis de s'est dimension.
-2. Poursuivre par les pièces suivis de leurs dimension.
-3. Si vous-devez positionner les pièces il faut donner un mot clé de position après les dimensions, et il faut évidement dire à coté de qu'elle pièce elle se situe.
+1. Commencer par un étage poursuivi de ses dimensions.
+2. Poursuivre par les pièces suivies de leurs dimensions.
+3. Si vous devez positionner les pièces, il faut donner un mot clé de position après les dimensions, et il faut évidemment dire à côté de quelle pièce elle se situe.
 4. Il est important de terminer par le caractère `;` pour marquer la fin de la maison.
 
 On peut ensuite éxectuter le code avec: 
@@ -27,7 +27,7 @@ On peut ensuite éxectuter le code avec:
 python hda.py -b sample.hda
 ```
 
-Ce qui permet d'obtenir les figures suivantes
+Ce qui permet d'obtenir les figures suivantes :
 
 ![](./.img/fig0.png)
 ![](./.img/fig1.png)
@@ -36,7 +36,7 @@ Ce qui permet d'obtenir les figures suivantes
 
 ## Mode _interactif_
 
-Le mode _interactif_ est un mode console, il faut dans un premier temps éxectuer le code:
+Le mode _interactif_ est un mode console, il faut dans un premier temps exécuter le code:
 
 ```bash
 python hda.py -i
