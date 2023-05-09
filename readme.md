@@ -14,7 +14,7 @@ Il y a le salon de 15m sur 15m a droite de la cuisine, le garage de 20m sur 20m 
 la chambre de 25m sur 50m, la salle de bain fait 15m sur 20m et elle est a droite de la chambre ;
 ```
 
-Pour que cela fonctione il est important de respeter une certaine gramaire:
+Pour que cela fonctionne il est important de respeter une certaine gramaire:
 
 1. Commencer par un étage poursuivis de s'est dimension.
 2. Poursuivre par les pièces suivis de leurs dimension.
