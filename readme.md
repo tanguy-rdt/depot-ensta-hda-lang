@@ -1,6 +1,6 @@
 # HDA lang
 
-_HDA lang_ est un language permetant la réalisation de plan de maison à partir d'un texte ou d'un mode interactif.
+_HDA lang_ est un language permettant la réalisation de plan de maison à partir d'un texte ou d'un mode interactif.
 
 ## Mode _texte_
 
