@@ -1,5 +1,5 @@
 import logging
-import ast_hda as ast
+import compiler.ast_hda as ast
 
 logger = logging.getLogger(__name__)
 

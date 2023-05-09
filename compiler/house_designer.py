@@ -17,8 +17,12 @@ class DesignerTools:
 
 
 class HouseDesigner:
-    def __init__(self) -> None:
+    def __init__(self, mode=None) -> None:
+        self.mode = mode
+        
         plt.close('all')
+        if self.mode == 'i':
+            plt.ion()
         
         self.ax = None
         self.fig = []
@@ -28,12 +32,16 @@ class HouseDesigner:
     def design(self, ast):
         ast.accept(self)
         
-        plt.show()
-        pdf = PdfPages("house_design.pdf")
-        for fig in self.fig:
-            pdf.savefig(fig)
-            fig.savefig(".img/fig" + str(self.fig.index(fig)) + ".png") # a supp juste pour le readme
-        pdf.close()
+        if self.mode == 'i':
+            plt.draw()
+        else:
+            plt.show()
+             
+            pdf = PdfPages("house_design.pdf")
+            for fig in self.fig:
+                pdf.savefig(fig)
+                fig.savefig(".img/fig" + str(self.fig.index(fig)) + ".png") 
+            pdf.close()
             
             
     def visit_house(self, house):

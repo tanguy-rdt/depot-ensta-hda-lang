@@ -5,7 +5,7 @@ regexExpressions = [
     # Whitespace
     (r'[ \t\n]+', None),
 
-    (r"!", "END"),
+    (r";", "END"),
 
     # Ponctuation
     (r'[ \'\.\,\:]+', None),

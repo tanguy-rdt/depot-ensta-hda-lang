@@ -1,10 +1,10 @@
 import io
 from optparse import OptionParser
 
-from lexer import Lexer
-from parser_hda import Parser
-from house_designer import HouseDesigner
-from house_designer import HouseDesigner3D
+from compiler.lexer import Lexer
+from compiler.parser_hda import Parser
+from compiler.house_designer import HouseDesigner
+from compiler.house_designer import HouseDesigner3D
 
 
 class Builder:
@@ -32,9 +32,9 @@ class Builder:
 class Interactive:
     def run(self):        
         wish = input(">>> ")
-        wish = wish + '\n'
         content = []
         content.append(wish)
+        content.append(';')
         while wish != "exit\n":        
             lexer = Lexer()
             lexems = lexer.lex(content)
@@ -42,12 +42,12 @@ class Interactive:
             parser = Parser(lexems)
             ast = parser.parse() 
             
-            hd = HouseDesigner()
+            hd = HouseDesigner(mode='i')
             hd.design(ast)
             
             wish = input(">>> ")
             wish = wish + '\n'
-            content.append(wish)
+            content.insert(-1, wish)
         exit()
 
 def option_parser():
