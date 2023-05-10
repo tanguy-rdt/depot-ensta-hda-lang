@@ -17,8 +17,6 @@ class Builder:
         
         lexer = Lexer()
         lexems = lexer.lex(content)
-
-        print(lexems)
         
         parser = Parser(lexems)
         ast = parser.parse() 
